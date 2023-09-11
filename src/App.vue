@@ -1,30 +1,74 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="app">
+    <div class="sidebar" v-if="showSidebar">
+      <ul>
+        <li><router-link to="/dashboard">Dashboard</router-link></li>
+        <li><router-link to="/profile">Perfil</router-link></li>
+        <li><router-link to="/settings">Configurações</router-link></li>
+      </ul>
+      <ul>
+        <li class="logout"><router-link to="/">Logout</router-link></li>
+      </ul>
+    </div>
+
+    <div class="dashboard">
+      <router-view></router-view>
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<script>
+export default {
+  computed: {
+    showSidebar() {
+      return this.$route.path !== '/login'
+    },
+  },
+};
+</script>
+
+<style>
+body{
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.app {
+  display: flex;
+  height: 100vh;
+  width: 100%;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.sidebar {
+  display: grid;
+  align-content: space-between;
+  height: 100%;
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.sidebar li:hover {
+  background-color: #0e0d0d;
+  
+}
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.dashboard {
+  flex: 1;
+  padding: 20px;
 }
 </style>
