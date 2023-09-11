@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ScreenLogin from '../components/ScreenLogin.vue'
 import ScreenDashboard from '../components/ScreenDashboard.vue'
+import ScreenUsers from '../components/ScreenUsers.vue'
 const routes = [
   {
     path: '/',
@@ -13,6 +14,10 @@ const routes = [
   {
     path: '/dashboard',
     component: ScreenDashboard,
+  },
+  {
+    path: '/users',
+    component: ScreenUsers,
   },
 ]
 

@@ -1,8 +1,11 @@
 <template>
     <div>
       <h1>Dashboard</h1>
-      <bar-chart />
-      <line-chart/>
+      <div>
+      <v-card class="mx-auto"  width="100%"><bar-chart /> </v-card>
+
+      <v-card class="mx-auto" width="100%"><line-chart/></v-card>
+      </div>
     </div>
   </template>
   

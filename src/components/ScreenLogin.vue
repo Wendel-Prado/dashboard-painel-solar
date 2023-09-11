@@ -23,8 +23,7 @@
     },
     methods: {
       login() {
-        // Simulando um login bem-sucedido
-        if (this.username.length !==0  && this.password.length !== 0) {
+        if (this.username  && this.password) {
           this.$router.push("/dashboard");
         } else {
           alert("Credenciais inválidas");

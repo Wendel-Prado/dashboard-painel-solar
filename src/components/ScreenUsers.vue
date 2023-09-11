@@ -1,0 +1,21 @@
+<template>
+    <div>
+      <h1>Usuários</h1>
+      <div>
+       <v-card class="mx-auto" width="100%"><table-users /></v-card>
+     
+    </div>
+    </div>
+  </template>
+  
+  <script>
+  import TableUsers from './TableUsers.vue';
+  
+  export default {
+    components: {
+        TableUsers,
+
+    },
+  };
+  </script>
+  

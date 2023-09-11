@@ -1,5 +1,5 @@
 <template>
-  <div class='my-chart-component'>
+  <div class='line-chart'>
   <Line :data="data" :options="options" />
 </div>
 </template>
@@ -36,10 +36,10 @@ export default {
   data() {
     return {
       data: {
-        labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+        labels: ['07/09', '08/09', '09/09', '10/09', '11/09'],
         datasets: [
           {
-            label: 'Vendas',
+            label: 'Consumo Diário',
             data: [12, 19, 3, 5, 2]
           }
         ]
@@ -53,8 +53,8 @@ export default {
 }
 
 </script><style>
-.my-chart-component {
+.line-chart {
   height: 100%;
-  width: 60%;
+  width: 100%;
 }
 </style>

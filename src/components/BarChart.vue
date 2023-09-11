@@ -1,5 +1,5 @@
 <template>
-  <div class='my-chart-component'>
+  <div class='bar-chart'>
   <Bar :data="data" :options="options" />
 </div>
 </template>
@@ -29,7 +29,7 @@ export default {
         labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
         datasets: [
           {
-            label: 'Vendas',
+            label: 'Consumo Mensal',
             data: [12, 19, 3, 5, 2]
           }
         ]
@@ -37,13 +37,14 @@ export default {
       options: {
         responsive: true,
         maintainAspectRatio: false
-        // Outras opções de configuração do gráfico aqui
       }
     }
   }
 }
 </script>
 <style>
-/* Estilos CSS para o componente Vue */
-
+.bar-chart {
+  height: 100%;
+  width: 100%;
+}
 </style>
