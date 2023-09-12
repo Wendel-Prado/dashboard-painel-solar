@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <div class="sidebar" v-if="showSidebar">
+    <div class="sidebar" >
       <ul>
         <div>
           <img alt="logo" class="logo" src="https://stemis.com.br/wp-content/uploads/2023/03/stemis-logo-h-branco.png" />
@@ -26,7 +26,7 @@
           <router-link to="/">
             <div class="container-item-sidebar">
               <mdicon name="exit-run" />
-              <h4 class="item-sidebar">LOGOUT</h4>
+              <h4 class="item-sidebar">Logout</h4>
             </div>
           </router-link>
     
@@ -39,17 +39,6 @@
     <router-view></router-view>
   </div>
 </div></template>
-
-<script>
-export default {
-  computed: {
-    showSidebar() {
-      return this.$route.path !== '/login'
-    },
-  },
-};
-
-</script>
 
 <style>
 body {
