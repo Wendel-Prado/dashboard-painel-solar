@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1>Usuários</h1>
+        <v-divider></v-divider>
         <div>
             <v-card class="mx-auto" width="100%"><table-users /></v-card>
 
