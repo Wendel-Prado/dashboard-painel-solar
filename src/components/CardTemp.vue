@@ -2,8 +2,8 @@
     <v-card max-width="400" class="mx-auto">
 
                     <div class="card-custo">
-                       <div style="background: #782707; width: 60px;">
-
+                       <div style="background: #782707; width: 60px;display: flex; align-items: center;justify-content: center;">
+                        <mdicon name="sun-thermometer" style="margin: 5px; color: #fff;"/>
                        </div>
                         <div style="padding: 15px;display: grid;">
                             <div alt="Temperatura do Painel" class="text-title">Temperatura do Painel</div>

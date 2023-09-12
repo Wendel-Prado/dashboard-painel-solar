@@ -40,7 +40,8 @@ export default {
         datasets: [
           {
             label: 'Consumo Diário (kWh)',
-            data: ['12', '19', '3', '5', '2']
+            data: ['12', '19', '3', '5', '2'],
+            backgroundColor: '#074278',
             
           }
         ]

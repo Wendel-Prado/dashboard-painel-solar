@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <div class="sidebar" v-if="showSidebar">
+    <div class="sidebar" v-if="!isMobile">
       <ul>
         <div>
           <img alt="logo" class="logo" src="https://stemis.com.br/wp-content/uploads/2023/03/stemis-logo-h-branco.png" />
@@ -26,8 +26,13 @@
           </router-link></li>
       </ul>
     </div>
-
-    <div class="dashboard">
+    <div v-else class="mobile-menu">
+      <button @click="toggleSidebar">Abrir Sidebar</button>
+    </div>
+    <div class="dashboard" v-if="!isMobile">
+      <router-view></router-view>
+    </div>
+    <div  v-else class="content" >
       <router-view></router-view>
     </div>
   </div>
@@ -36,9 +41,25 @@
 <script>
 
 export default {
-  computed: {
-    showSidebar() {
-      return this.$route.path !== '/login'
+  data() {
+    return {
+      isMobile: false,
+      sidebarOpen: false,
+    };
+  },
+  mounted() {
+    this.checkMobile(); // Verifique a largura da tela quando o componente é montado
+    window.addEventListener('resize', this.checkMobile); // Atualize a largura da tela quando a janela for redimensionada
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkMobile); // Remova o ouvinte de redimensionamento quando o componente for destruído
+  },
+  methods: {
+    checkMobile() {
+      this.isMobile = window.innerWidth <= 768; // Defina a largura máxima para mobile
+    },
+    toggleSidebar() {
+      this.sidebarOpen = !this.sidebarOpen; // Alternar o estado do sidebar móvel
     },
   },
 };
@@ -80,8 +101,38 @@ h1{
   background-color: #074278;
   color: #fff;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
 }
 
+.sidebar.closed {
+  transform: translateX(-250px); /* Fechar o sidebar móvel */
+}
+
+.mobile-menu {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.content {
+  margin-left: 250px; /* Ajuste conforme a largura do seu sidebar */
+  padding: 20px;
+  transition: margin 0.3s ease-in-out;
+}
+
+.content.mobile {
+  margin-left: 0; /* Fechar o espaço deixado pelo sidebar móvel */
+}
 .sidebar ul {
   display: grid;
   gap: 15px;
