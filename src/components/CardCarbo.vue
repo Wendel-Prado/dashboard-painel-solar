@@ -2,12 +2,12 @@
     <v-card max-width="400" class="mx-auto">
 
                     <div class="card-custo">
-                       <div style="background: #000; width: 60px;">
-                        <v-icon icon="fa:fas fa-solid fa-dollar-sign" style="color: #ffffff;"></v-icon>
+                       <div style="background: #227807; width: 60px;">
+
                        </div>
                         <div style="padding: 15px;display: grid;">
-                            <div class="text-title">Custo Total</div>
-                            <div class="text-content">R$ 160,00</div>
+                            <div class="text-title">Carbono Evitado</div>
+                            <div class="text-content">0.9 ton CO2</div>
                         </div>
                     </div>
     </v-card>
@@ -15,7 +15,7 @@
 <style>
 .card-custo {
     display: flex;
-    width: 200px;
+    width: 245px !important;
     height:100px;
 }
 .text-title{

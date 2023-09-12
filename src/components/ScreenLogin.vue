@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="login">
       <h1>Login</h1>
-      <form @submit.prevent="login">
-        <label for="username">Username:</label>
+      <form @submit.prevent="login" class="form-login">
+        <label for="username">Usuário:</label>
         <input type="text" id="username" v-model="username" required />
         <br />
         <label for="password">Password:</label>
@@ -34,5 +34,20 @@
   </script>
   
   <style scoped>
+  .login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+  }
+  .form-login{
+    display: grid;
+  }
   </style>
   

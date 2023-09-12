@@ -39,8 +39,9 @@ export default {
         labels: ['07/09', '08/09', '09/09', '10/09', '11/09'],
         datasets: [
           {
-            label: 'Consumo Diário',
-            data: [12, 19, 3, 5, 2]
+            label: 'Consumo Diário (kWh)',
+            data: ['12', '19', '3', '5', '2']
+            
           }
         ]
       },
@@ -54,7 +55,8 @@ export default {
 
 </script><style>
 .line-chart {
-  height: 100%;
-  width: 100%;
+  height: 45vh;
+  width: 90%;
+  padding: 25px;
 }
 </style>

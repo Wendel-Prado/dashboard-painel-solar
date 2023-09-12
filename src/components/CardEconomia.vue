@@ -2,12 +2,12 @@
     <v-card max-width="400" class="mx-auto">
 
                     <div class="card-custo">
-                       <div style="background: #000; width: 60px;">
-                        <v-icon icon="fa:fas fa-solid fa-dollar-sign" style="color: #ffffff;"></v-icon>
+                       <div style="background: #159d78; width: 60px;">
+
                        </div>
                         <div style="padding: 15px;display: grid;">
-                            <div class="text-title">Custo Total</div>
-                            <div class="text-content">R$ 160,00</div>
+                            <div class="text-title">Economia Diária</div>
+                            <div class="text-content">R$ 12.50</div>
                         </div>
                     </div>
     </v-card>

@@ -29,7 +29,7 @@ export default {
         labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
         datasets: [
           {
-            label: 'Consumo Mensal',
+            label: 'Consumo Mensal (kWh)',
             data: [12, 19, 3, 5, 2]
           }
         ]
@@ -44,7 +44,8 @@ export default {
 </script>
 <style>
 .bar-chart {
-  height: 100%;
-  width: 100%;
+  height: 45vh;
+  width: 90%;
+  padding: 25px;
 }
 </style>

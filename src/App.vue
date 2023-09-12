@@ -2,12 +2,28 @@
   <div class="app">
     <div class="sidebar" v-if="showSidebar">
       <ul>
-        <div><img alt="logo" class="logo" src="https://stemis.com.br/wp-content/uploads/2023/03/stemis-logo-h-branco.png"/></div>
-        <li alt="Dashboard" ><router-link to="/dashboard"><h2 class="item-sidebar">Dashboard</h2></router-link></li>
-        <li alt="Usuários" ><router-link to="/users"><h2 class="item-sidebar">Usuários</h2></router-link></li>
+        <div>
+          <img alt="logo" class="logo" src="https://stemis.com.br/wp-content/uploads/2023/03/stemis-logo-h-branco.png" />
+        </div>
+        <li alt="Dashboard"><router-link to="/dashboard">
+            <div class="container-item-sidebar">
+              <mdicon name="view-dashboard"  style="margin: 5px;"/> 
+              <h2 class="item-sidebar">Dashboard</h2>
+            </div>
+          </router-link>
+        </li>
+        <li alt="Usuários"><router-link to="/users">
+            <div class="container-item-sidebar">
+              <mdicon name="account-group" style="margin: 5px;"/>
+              <h2 class="item-sidebar">Usuários</h2>
+            </div>
+          </router-link>
+        </li>
       </ul>
       <ul>
-        <li alt="logout" class="logout"><router-link to="/"><h4 class="item-sidebar">LOGOUT</h4></router-link></li>
+        <li alt="logout" class="logout"><router-link to="/">
+            <h4 class="item-sidebar">LOGOUT</h4>
+          </router-link></li>
       </ul>
     </div>
 
@@ -18,6 +34,7 @@
 </template>
 
 <script>
+
 export default {
   computed: {
     showSidebar() {
@@ -25,25 +42,37 @@ export default {
     },
   },
 };
+
 </script>
 
 <style>
-body { 
-  min-height: 100vh; 
+body {
+  min-height: 100vh;
   margin: 0;
 }
+
 .app {
   display: flex;
   width: 100%;
   overflow-y: hidden;
+  height: 100vh;
 }
-.item-sidebar{
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+.container-item-sidebar {
+  display: flex;
+  align-items: center;
 }
-.logo{
-  height: 7vh;
-  padding: 10px;
+.item-sidebar {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 0;
 }
+h1{
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.logo {
+  height: 5vh;
+  padding: 20px;
+}
+
 .sidebar {
   display: grid;
   align-content: space-between;
@@ -54,17 +83,22 @@ body {
 }
 
 .sidebar ul {
+  display: grid;
+  gap: 15px;
   list-style-type: none;
   padding: 0;
 }
 
 .sidebar li {
+  display: flex;
   padding: 10px;
 }
+
 .sidebar li:hover {
   background-color: #0e0d0d;
-  
+
 }
+
 .sidebar a {
   text-decoration: none;
   color: #fff;
@@ -73,5 +107,7 @@ body {
 .dashboard {
   flex: 1;
   padding: 20px;
+  overflow: auto;
+  background: #f6f8ff;
 }
-</style>
+  </style>
