@@ -1,7 +1,7 @@
 <template>
   <div class='line-chart'>
-  <Line :data="data" :options="options" />
-</div>
+    <Line :data="data" :options="options" />
+  </div>
 </template>
 
 <script>
@@ -42,7 +42,7 @@ export default {
             label: 'Consumo Diário (kWh)',
             data: ['12', '19', '3', '5', '2'],
             backgroundColor: '#074278',
-            
+
           }
         ]
       },
@@ -54,10 +54,17 @@ export default {
   }
 }
 
-</script><style>
+</script>
+<style>
 .line-chart {
   height: 45vh;
   width: 90%;
   padding: 25px;
+}
+
+@media (max-width: 768px) {
+  .line-chart {
+    height: 25vh;
+  }
 }
 </style>

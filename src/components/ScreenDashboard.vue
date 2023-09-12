@@ -57,4 +57,16 @@
   display: flex;
   gap:20px
 }
+@media (max-width: 768px) {
+  .container-cards{
+  display: grid;
+  width: 100%;
+  gap:20px;
+  justify-content:space-between
+}
+
+  .container-charts{
+    display: grid;
+  }
+}
 </style>
