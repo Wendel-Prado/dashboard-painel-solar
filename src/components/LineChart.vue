@@ -41,7 +41,8 @@ export default {
           {
             label: 'Consumo Diário (kWh)',
             data: ['12', '19', '3', '5', '2'],
-            backgroundColor: '#074278',
+            backgroundColor: '#256eb8',
+            borderColor:'#256eb8'
 
           }
         ]

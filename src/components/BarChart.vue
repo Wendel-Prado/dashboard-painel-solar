@@ -30,7 +30,8 @@ export default {
         datasets: [
           {
             label: 'Consumo Mensal (kWh)',
-            data: [12, 19, 3, 5, 2]
+            data: [12, 19, 3, 5, 2],
+            backgroundColor: '#256eb8',
           }
         ]
       },
